@@ -1,0 +1,8 @@
+<!-- Change the debuggable preference to true to build a remote CDT debuggable app for -->
+<!-- Crosswalk apps on Android 4.0+ devices and Cordova apps on Android 4.4+ devices. -->
+<preference name="debuggable" value="false" />
+<!-- IMPORTANT: set the debuggable preference to false before you build for the store! -->
+
+<!-- 'value' = number of milliseconds to display the splash screen in a Cordova build. -->
+<!-- This preference only affects Cordova builds for Crosswalk and Android. -->
+<!-- <preference name="SplashScreenDelay" value="2000" /> -->

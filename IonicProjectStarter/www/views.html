@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <link rel="stylesheet" type="text/css" href="ionic/css/ionic.min.css">
+    <link rel="stylesheet" type="text/css" href="css/index_main.less.css" class="main-less">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+
+    <script src="intelxdk.js"></script>
+    <script src="cordova.js"></script>
+    <script src="xhr.js"></script>
+    <script src="xdk/init-dev.js"></script>
+    <script type="application/javascript" src="ionic/js/ionic.bundle.js"></script>
+    <script type="application/javascript" src="js/views_init_services.js"></script>
+  </head>
+
+  <body ng-app="myApp">
+
+    <div class="upage vertical-col left" id="page-index">
+      <div class="grid grid-pad urow uib_row_1 row-height-1" data-uib="layout/row" data-ver="0">
+        <div class="col uib_col_1 col-0_12-12" data-uib="layout/col" data-ver="0">
+          <div class="widget-container content-area vertical-col">
+
+            <ion-list class="widget uib_w_1 d-margins" data-uib="ionic/list" data-ver="0">
+              <ion-item class="item item-body widget uib_w_5 d-margins" data-uib="ionic/list_item_body" data-ver="0">
+                <img class="full-image" ng-src="images/Strabburg.jpg">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis auctor justo et ipsum tempor commodo. Nam eget metus nisl. Sed quis leo enim. Etiam suscipit nec ipsum ac tristique.</p>
+              </ion-item>
+            </ion-list><span class="uib_shim"></span>
+          </div>
+        </div>
+        <span class="uib_shim"></span>
+      </div>
+    </div>
+    <div class="upage vertical-col left hidden" id="page-search">
+      <div class="grid grid-pad urow uib_row_2 row-height-2" data-uib="layout/row" data-ver="0">
+        <div class="col uib_col_2 col-0_12-12" data-uib="layout/col" data-ver="0">
+          <div class="widget-container content-area vertical-col">
+            <label class="item item-input widget uib_w_8 d-margins" data-uib="ionic/input" data-ver="0">
+              <i class="icon ion-android-search ion placeholder-icon"></i>
+              <input type="search" placeholder="Placeholder">
+            </label><span class="uib_shim"></span>
+          </div>
+        </div>
+        <span class="uib_shim"></span>
+      </div>
+    </div>
+
+  </body>
+
+</html>

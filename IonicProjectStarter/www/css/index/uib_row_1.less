@@ -1,0 +1,11 @@
+@gutter_uib_row_1: 20px;
+
+.uib_row_1:not(.cright) > .col { padding-right:@gutter_uib_row_1; }
+
+.uib_row_1.cright       > .col { padding-left:@gutter_uib_row_1; }
+
+@media all {
+ .col-0_12-12 { width: auto; float: none !important; }
+ .urow:not(.cright) > .col-0_12-12 { padding-right:0px !important; }
+ .urow.cright       > .col-0_12-12 { padding-left:0px !important; }
+}

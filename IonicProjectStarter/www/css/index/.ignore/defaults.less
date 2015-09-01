@@ -1,0 +1,186 @@
+/*
+
+  Warning:  This CSS file has been auto-generated from a .less file.  If you edit it your edits will be lost the next time LessCSS is run.
+
+  It would be best to make a separate CSS file and place any overriding CSS in there.  If you must access the original CSS, do so by editing the .less files.
+
+*/
+
+/* global settings */
+*, *:after, *:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0px;
+}
+
+/* grid */
+.grid { width:100%; }
+.upage-content > .grid {  max-width:@max_width; margin-left:auto; margin-right:auto;  }
+
+/* gutter around whole design */
+/*
+.upage-content > .grid-pad {
+  padding: @gutter @gutter 0px @gutter;
+}
+*/
+
+/* column */
+.urow:not(.cright) > .col { float:left;  }
+.urow.cright       > .col { float:right; }
+
+.col { position:relative; min-height:1px; }
+.content-area { position:relative; }
+
+/* row */
+.urow { clear:both; position:relative; }
+form.urow { margin-bottom: 0px; }
+
+.widget { position:relative; }
+
+/* for widgets and the like
+   <div class="table-thing widget">
+    <div class="narrow-control w85"> my width is set </div>
+    <div class="wide-control"> my width is 100%, minus the set width of the narrow-control</div>
+   </div>
+
+   .w85 { width:85px; }
+*/
+.vertical-col > *,
+.vertical-col > .table-thing, .vertical-col > .afScrollPanel > .table-thing,
+.wrapping-col > .no_wrap.table-thing, .wrapping-col > .afScrollPanel > .no_wrap.table-thing {
+  width:100%;
+}
+
+#afui .vertical-col > .afScrollPanel > .widget,
+#afui .vertical-col > .widget,
+.vertical-col > .widget {
+  width: calc(100% ~'-' 10px);
+  margin-left: 5px;
+}
+
+.col > .vertical-col > .widget {
+  width: 100%;
+  margin-left: 0;
+}
+
+.table-thing{ display:table; }
+.wide-control{ display:table-cell; width:100% }
+.narrow-control{ display:table-cell;  }
+
+/* wrapping column */
+.wrapping-col.right  > *, .wrapping-col.right  > .afScrollPanel > * { float: right;  }  /* margin: 0 5px;   move margin to another class */
+.wrapping-col.left   > *, .wrapping-col.left   > .afScrollPanel > * { float: left;  }
+
+/* center and right alignment */
+.vertical-col.center { text-align:center; }
+.vertical-col.right  { text-align:right; }
+
+.vertical-col.right  > *, 
+.col > .vertical-col.right  > .widget,
+.vertical-col.right  > .afScrollPanel > * { 
+  margin-left:auto; 
+}
+.vertical-col.center > *, 
+.col > .vertical-col.center > .widget,
+.vertical-col.center > .afScrollPanel > * { 
+  margin-left:auto; 
+  margin-right:auto; 
+}
+.wrapping-col:not(.horiz-area) > .no_wrap,
+.wrapping-col:not(.horiz-area) > .afScrollPanel > .no_wrap {
+  float: none;
+  clear :both;
+  /* margin: 8px 0px; */
+}
+
+.center-h-v-col > .widget {
+  position: absolute !important;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform:translate(-50%, -50%);
+  margin-top: 0 !important;
+}
+
+/* shim */
+.uib_shim{ clear:both; float:none !important; width:100%; position:relative; height:0px; line-height: 0px; font-size:0px; display:block; }
+
+/* content-box fix for box-sizing */
+.content-box, .content-box:before, .content-box:after {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+/* page */
+.hidden:not(.afPopup) {
+  display: none;
+}
+
+.upage-content, .upage-outer {position:relative; }
+html, body  { height: 100%; }
+body:not(#afui) {
+  .upage, .upage-content { height: 100%; }
+  .upage-outer { height: auto; }
+}
+
+/* position relative works fine. but fixed can be elected as well */
+/* .upage-content, .upage-outer { position: fixed; height:100%; } */
+
+.upage { overflow-x: hidden; }
+.upage-content { z-index:1; }
+#afui .upage { padding: 0; }
+
+/* sidebars and crossbars */
+
+.uib_sidebar {
+  position: fixed;
+  height: 100%;
+  top: 0px;
+}
+
+.uib_crossbar {
+  position: fixed;
+  width: 100%;
+  left: 0px;
+}
+
+.leftbar, .rightbar        {  z-index:2; }
+.reveal.leftbar  { left:0px;  z-index:0; }
+.reveal.rightbar { right:0px; z-index:0;}
+.leftbar.oh,
+.rightbar.oh { z-index:3; }
+.reveal      { z-index:0; visibility: hidden; }
+.topbar      { z-index:3; }
+.topbar.reveal { top:0px; z-index:0; }
+.botbar      { z-index:3; position:fixed; }
+.botbar.oh,
+.topbar.oh   { z-index:4; }
+
+.sidebar-content {
+  height: 100%;
+  overflow-y: auto;
+  position: relative;
+  margin: 0;
+}
+
+.sidebar-thumb{ position:relative; margin:0; /* background-image:url('images/gripper.png'); */}
+
+//service method support
+.template { display:none !important; }
+
+//Absolute positioning
+.uib-absolute { position: absolute !important }
+
+//framework 7 content block inner block
+.content-block-inner { box-sizing: content-box; }
+
+//framework 7 multi-button header
+.navbar-inner .widget-container { display: inline-flex; }
+
+//framework 7 searchbar width override
+.searchbar { width: 100% !important; margin: 0 !important; }
