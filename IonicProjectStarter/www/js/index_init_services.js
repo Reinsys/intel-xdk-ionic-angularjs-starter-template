@@ -5,7 +5,7 @@
    thus you can reformat dates or names, remove or add entries, etc.
    -------------- */
 
-var app = angular.module('myApp',['ionic']);
+var app = angular.module('myApp',['ionic', 'ngCordova']);
 app.config(['$controllerProvider', function($controllerProvider) {
 	$controllerProvider.allowGlobals();
 }]);

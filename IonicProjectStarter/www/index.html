@@ -54,12 +54,15 @@
   * You can safely ignore the error or comment out this line if you will not be developing a Cordova app.
 -->
         <script src="intelxdk.js"></script>
-        <script src="cordova.js"></script>
-        <script src="xhr.js"></script>
         <!-- normalizes device and document ready events, see file for details -->
         <script type="application/javascript" src="lib/jquery.min.js"></script>
         <script type="application/javascript" src="marginal/marginal-position.js"></script>
-        <script type="application/javascript" src="ionic/js/ionic.bundle.js"></script>
+        <script type="application/javascript" src="ionic/js/ionic.bundle.js"></script> 
+        <!-- Only include ng-cordova-mocks.min.js in development. Remove in production. -->
+		<!--<script src="lib/ngCordova/dist/ng-cordova-mocks.min.js"></script>-->
+        <script src="lib/ngCordova/dist/ng-cordova.min.js"></script>
+        <script src="cordova.js"></script>
+        <script src="xhr.js"></script>
         <script type="application/javascript" src="js/index_init_services.js"></script>
         <script type="application/javascript" src="js/controllers.js"></script>
         <script type="application/javascript" src="js/services.js"></script>
