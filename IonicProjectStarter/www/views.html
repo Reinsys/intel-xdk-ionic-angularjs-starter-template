@@ -12,38 +12,73 @@
     <script src="xhr.js"></script>
     <script src="xdk/init-dev.js"></script>
     <script type="application/javascript" src="ionic/js/ionic.bundle.js"></script>
-    <script type="application/javascript" src="js/views_init_services.js"></script>
+    <script type="application/javascript" src="lib/jquery.min.js"></script>
+    <script type="application/javascript" src="marginal/marginal-position.js"></script>
   </head>
 
   <body ng-app="myApp">
-    <div class="upage vertical-col left" id="page-index">
-      <div class="grid grid-pad urow uib_row_1 row-height-1" data-uib="layout/row" data-ver="0">
-        <div class="col uib_col_1 col-0_12-12" data-uib="layout/col" data-ver="0">
-          <div class="widget-container content-area vertical-col">
 
-            <ion-list class="widget uib_w_1 d-margins" data-uib="ionic/list" data-ver="0">
-              <ion-item class="item item-body widget uib_w_5 d-margins" data-uib="ionic/list_item_body" data-ver="0">
-                <img class="full-image" ng-src="images/Strabburg.jpg" src="images/Strabburg.jpg">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis auctor justo et ipsum tempor commodo. Nam eget metus nisl. Sed quis leo enim. Etiam suscipit nec ipsum ac tristique.</p>
-              </ion-item>
-            </ion-list><span class="uib_shim"></span>
-          </div>
-        </div>
-        <span class="uib_shim"></span>
-      </div>
-    </div>
     <div class="upage vertical-col left hidden" id="page-search">
-      <div class="grid grid-pad urow uib_row_2 row-height-2" data-uib="layout/row" data-ver="0">
-        <div class="col uib_col_2 col-0_12-12" data-uib="layout/col" data-ver="0">
-          <div class="widget-container content-area vertical-col">
-            <label class="item item-input widget uib_w_8 d-margins" data-uib="ionic/input" data-ver="0">
-              <i class="icon ion-android-search ion placeholder-icon"></i>
-              <input type="search" placeholder="Placeholder">
-            </label><span class="uib_shim"></span>
+      <ion-view view-title="Search Page">
+        <ion-content>
+          <div class="grid grid-pad urow uib_row_1 row-height-1" data-uib="layout/row" data-ver="0">
+            <div class="col uib_col_1 col-0_12-12" data-uib="layout/col" data-ver="0">
+              <div class="widget-container content-area vertical-col">
+                <label class="item item-input widget uib_w_21 d-margins" data-uib="ionic/input" data-ver="0">
+                  <i class="icon ion-ios7-search ion placeholder-icon"></i>
+                  <input type="search" placeholder="Search">
+                </label>
+                <ion-list class="widget uib_w_28 d-margins" data-uib="ionic/list" data-ver="0">
+                  <ion-item class="item widget uib_w_29" data-uib="ionic/list_item" data-ver="0">List item 1</ion-item>
+                  <ion-item class="item widget uib_w_30" data-uib="ionic/list_item" data-ver="0">List item 2</ion-item>
+                  <ion-item class="item widget uib_w_31" data-uib="ionic/list_item" data-ver="0">List item 3</ion-item>
+                  <ion-item class="item widget uib_w_31" data-uib="ionic/list_item" data-ver="0">List item 4</ion-item>
+                  <ion-item class="item widget uib_w_31" data-uib="ionic/list_item" data-ver="0">List item 5</ion-item>
+                  <ion-item class="item widget uib_w_31" data-uib="ionic/list_item" data-ver="0">List item 6</ion-item>
+                  <ion-item class="item widget uib_w_31" data-uib="ionic/list_item" data-ver="0">List item 7</ion-item>
+                  <ion-item class="item widget uib_w_31" data-uib="ionic/list_item" data-ver="0">List item 8</ion-item>
+                  <ion-item class="item widget uib_w_31" data-uib="ionic/list_item" data-ver="0">List item 9</ion-item>
+                  <ion-item class="item widget uib_w_31" data-uib="ionic/list_item" data-ver="0">List item 10</ion-item>
+                  <ion-item class="item widget uib_w_31" data-uib="ionic/list_item" data-ver="0">List item 11</ion-item>
+                  <ion-item class="item widget uib_w_31" data-uib="ionic/list_item" data-ver="0">List item 12</ion-item>
+                  <ion-item class="item widget uib_w_31" data-uib="ionic/list_item" data-ver="0">List item 13</ion-item>
+                  <ion-item class="item widget uib_w_31" data-uib="ionic/list_item" data-ver="0">List item 14</ion-item>
+                  <ion-item class="item widget uib_w_31" data-uib="ionic/list_item" data-ver="0">List item 15</ion-item>
+                </ion-list>
+              </div>
+            </div>
+            <span class="uib_shim"></span>
           </div>
-        </div>
-        <span class="uib_shim"></span>
-      </div>
+        </ion-content>
+      </ion-view>
+    </div>
+    <div class="upage vertical-col left hidden" id="page-index">
+      <ion-view view-title="Home Page">
+        <ion-content>
+          <div class="grid grid-pad urow uib_row_2 row-height-2" data-uib="layout/row" data-ver="0">
+            <div class="col uib_col_2 col-0_12-12" data-uib="layout/col" data-ver="0">
+              <div class="widget-container content-area vertical-col">
+
+                <ion-list class="widget uib_w_23 d-margins" data-uib="ionic/list" data-ver="0">
+                  <ion-item class="item item-body widget uib_w_27 d-margins" data-uib="ionic/list_item_body" data-ver="0">
+                    <img class="full-image" src="images/Strabburg.jpg">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis auctor justo et ipsum tempor commodo. Nam eget metus nisl. Sed quis leo enim. Etiam suscipit nec ipsum ac tristique.</p>
+                  </ion-item>
+                </ion-list><span class="uib_shim"></span>
+              </div>
+            </div>
+            <span class="uib_shim"></span>
+          </div>
+        </ion-content>
+
+        <ion-footer-bar class="bar inner-element uib_w_4 bar-light bar-footer" data-uib="ionic/footer" data-ver="0">
+          <div class="buttons widget-container content-area horiz-area wrapping-col">
+          </div>
+          <h1 class="title">Powered by Reinsys</h1>
+          <div class="buttons widget-container content-area horiz-area wrapping-col">
+          </div>
+        </ion-footer-bar>
+      </ion-view>
     </div>
 
   </body>

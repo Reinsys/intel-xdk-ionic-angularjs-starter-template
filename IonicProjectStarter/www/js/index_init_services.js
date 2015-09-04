@@ -5,31 +5,40 @@
    thus you can reformat dates or names, remove or add entries, etc.
    -------------- */
 
-var app = angular.module('myApp',['ionic', 'ngCordova']);
+var app = angular.module('myApp',['ionic','ngCordova']);
 app.config(['$controllerProvider', function($controllerProvider) {
 	$controllerProvider.allowGlobals();
 }]);
 app.config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
   .state('index', {
-    url: '/index',
-    templateProvider : function(display){/*use display service to load the intel xdk template by page id*/
-        return display.getPageTemplate('page-index').then(function(template){
-            return template;
-        });      
-    },
-    controller: 'IndexController'
+    url: '/',
+      views : {
+          index:{
+            templateProvider : function(display){/*use display service to load the intel xdk template by page id*/
+                return display.getPageTemplate('page-index').then(function(template){
+                    return template;
+                });  
+
+            },
+            controller: 'IndexController'
+          }
+      }
   })
   .state('search', {
     url: '/search',
-    templateProvider : function(display){
-        return display.getPageTemplate('page-search').then(function(template){
-            return template;
-        }); 
-    },
-    controller: 'SearchController'    
+       views : {
+          index:{
+            templateProvider : function(display){
+                return display.getPageTemplate('page-search').then(function(template){
+                    return template;
+                }); 
+            },
+            controller: 'SearchController'    
+          }
+       }
   })
 
-  $urlRouterProvider.otherwise("/index");
+  $urlRouterProvider.otherwise("/");
 
 });

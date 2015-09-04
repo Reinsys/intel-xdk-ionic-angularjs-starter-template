@@ -1,11 +1,14 @@
-app.controller('AppController', function($scope, display) {  
+app.controller('AppController', function($scope, display, $ionicHistory, $ionicSideMenuDelegate, $ionicPlatform, $rootScope) {  
     $scope.display = display;
-    $scope.navBack = function() {
-        window.history.back();
-    }; 
+    $ionicPlatform.onHardwareBackButton(function(event){
+        $ionicHistory.goBack();
+    });
+    $scope.toggleLeft = function(){
+        $ionicSideMenuDelegate.toggleLeft();
+    }
 });
-app.controller('IndexController', function($scope, display) {
-    $scope.$parent.title = 'Home';    
+app.controller('IndexController', function($rootScope, $scope, display) {
+    $rootScope.title = 'Home';    
     
 });
 app.controller('SearchController', function($scope, display){    

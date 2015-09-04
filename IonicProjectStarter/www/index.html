@@ -33,6 +33,7 @@
                 @-ms-viewport { width: 100vw ; min-zoom: 100% ; zoom: 100% ; }          @viewport { width: 100vw ; min-zoom: 100% zoom: 100% ; }
                 @-ms-viewport { user-zoom: fixed ; min-zoom: 100% ; }                   @viewport { user-zoom: fixed ; min-zoom: 100% ; }
                 /*@-ms-viewport { user-zoom: zoom ; min-zoom: 100% ; max-zoom: 200% ; }   @viewport { user-zoom: zoom ; min-zoom: 100% ; max-zoom: 200% ; }*/
+        
         </style>
 
         <link rel="stylesheet" href="css/app.css">
@@ -57,10 +58,10 @@
         <!-- normalizes device and document ready events, see file for details -->
         <script type="application/javascript" src="lib/jquery.min.js"></script>
         <script type="application/javascript" src="marginal/marginal-position.js"></script>
-        <script type="application/javascript" src="ionic/js/ionic.bundle.js"></script> 
-        <!-- Only include ng-cordova-mocks.min.js in development. Remove in production. -->
-		<!--<script src="lib/ngcordova/dist/ng-cordova-mocks.min.js"></script>-->
-        <script src="lib/ngcordova/dist/ng-cordova.min.js"></script>
+        <script type="application/javascript" src="ionic/js/ionic.bundle.js"></script>
+        <!-- Only include ng-cordova-mocks.min.js in development -->
+        <script src="lib/ng-cordova-mocks.min.js"></script>
+        <script src="lib/ng-cordova.min.js"></script>
         <script src="cordova.js"></script>
         <script src="xhr.js"></script>
         <script type="application/javascript" src="js/index_init_services.js"></script>
@@ -73,32 +74,40 @@
         <!-- IMPORTANT: Do not include a weinre script tag as part of your release builds! -->
         <!-- Place your remote debugging (weinre) script URL from the Test tab here, if it does not work above -->
         <!-- <script src="http://debug-software.intel.com/target/target-script-min.js#insertabiglongfunkynumberfromthexdkstesttab"></script> -->
-        <div class="upage" id="mainpage">
-            <div class="upage-outer fixed-header-footer">
-                <div class="upage-content ac0 content-area vertical-col left" id="page_32_96">
-                    <ui-view name=""></ui-view>
-                    <div id="template" class="hidden"></div>                            
-                </div>
-                <ion-header-bar class="bar inner-element uib_w_1 bar-positive bar-header" data-uib="ionic/header" data-ver="0" align-title="center">
-                    <div class="buttons widget-container content-area horiz-area wrapping-col">
-                        <button class="button widget uib_w_2 d-margins" data-uib="ionic/button" data-ver="0" ng-click="display.goToPath('/index')">Home</button>
-                    </div>
-                    <h1 class="title">{{title}}</h1>
-                    <div class="buttons widget-container content-area horiz-area wrapping-col">
-                        <button class="button widget uib_w_3 d-margins" data-uib="ionic/button" data-ver="0" ng-click="navBack()">Back</button>
-                    </div>
-                </ion-header-bar>
-                <ion-footer-bar class="bar inner-element uib_w_4 bar-positive bar-footer" data-uib="ionic/footer" data-ver="0">
-                    <div class="buttons widget-container content-area horiz-area wrapping-col">
-                        <button class="button widget uib_w_5 d-margins" data-uib="ionic/button" data-ver="0" ng-click="display.goToPath('/search')">Search</button>
-                    </div>
-                    <h1 class="title">Powered by Reinsys.com</h1>
-                    <div class="buttons widget-container content-area horiz-area wrapping-col">
 
-                    </div>
-                </ion-footer-bar>
-            </div>
-        </div>
+        <ion-side-menus enable-menu-with-back-views="true">
+            <ion-side-menu side="left">
+                <ion-header-bar>
+                    <h1 class="title">Navigation</h1>
+                </ion-header-bar>
+                <ion-content has-header="true" class="widget">
+                    <ion-list class="widget" data-uib="ionic/list">
+                        <ion-item class="item widget" href="#/" ng-click="toggleLeft()" data-uib="ionic/list_item">Home</ion-item>
+                    </ion-list>
+                    <ion-list class="widget" data-uib="ionic/list">
+                        <ion-item class="item widget" ng-click="display.alert('Developing innovative solutions for everyone!', 'Reinsys.com')" data-uib="ionic/list_item">About</ion-item>
+                    </ion-list>
+                </ion-content>
+
+            </ion-side-menu>
+            <ion-side-menu-content>
+                <ion-nav-bar>
+                    <ion-nav-back-button class="button-clear">
+                        <i class="ion-arrow-left-c"></i> Back
+                    </ion-nav-back-button>
+                    <ion-nav-buttons side="left">
+                        <!-- Toggle left side menu -->
+                        <button menu-toggle="left" class="button button-icon icon widget ion ion-navicon" data-uib="ionic/button"></button>
+                    </ion-nav-buttons>
+                    <ion-nav-buttons side="right">
+                        <!-- Toggle left side menu -->
+                        <button class="button button-icon icon widget ion ion-search" data-uib="ionic/button" ng-click="display.goToPath('/search')"></button>
+                    </ion-nav-buttons>
+                </ion-nav-bar>
+                <ion-nav-view name="index"></ion-nav-view>
+            </ion-side-menu-content>
+        </ion-side-menus>
+        <div id="template" class="hidden"></div>
     </body>
 
 </html>
