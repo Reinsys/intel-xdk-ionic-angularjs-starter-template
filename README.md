@@ -18,7 +18,5 @@ Browse to "YourProjectName" folder in your projects directory
 
 Click and open "YourProjectName.xdk"
 
-That will be it. 
-
 # Note
 You will be prompted that it was created by an older version of intelXDK, so click "Upgrade" to continue. That may take a few seconds to a minute. New version built with latest IntelXDK will be available shortly.
