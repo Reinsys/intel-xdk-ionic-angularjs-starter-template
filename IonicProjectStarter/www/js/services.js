@@ -1,4 +1,4 @@
-app.factory('display', ['$filter','$q','$ionicPopup', function($filter, $q, $ionicPopup, $ionicPlatform, $cordovaLocalNotification) {
+app.factory('display', ['$filter','$q','$ionicPopup','$ionicSideMenuDelegate','$ionicHistory', function($filter, $q, $ionicPopup, $ionicSideMenuDelegate, $ionicHistory) {
     return {
         alert : function(message, title, button, callback){
             if(!callback) var callback = function(){return;}
@@ -17,23 +17,6 @@ app.factory('display', ['$filter','$q','$ionicPopup', function($filter, $q, $ion
                });
                alertPopup.then(callback);
         },
-        sendNotification : function(notification){
-            /*requires $cordovaLocalNotification add the plugin from cordova directory*/
-            $ionicPlatform.ready(function() {
-                /*
-                Sample notification
-                {
-                    id: 1,
-                    title: "Production Jour fixe",
-                    text: "Duration 1h",
-                    firstAt: alarmTime,
-                    every: "hour",
-                    data: { meetingId:"123" }
-                }
-                */
-                $cordovaLocalNotification.schedule(notification);
-            });
-        },
         goToPath : function(pathLink){
             var path = "index.html#" + pathLink;
             window.location = path;
@@ -46,6 +29,12 @@ app.factory('display', ['$filter','$q','$ionicPopup', function($filter, $q, $ion
               deffered.resolve(template);
           });
           return deffered.promise;
+        },
+        menuIsOpen : function(){
+            return ($ionicSideMenuDelegate.isOpenLeft()) ? true : false;
+        },
+        currentStateName : function(){
+            return $ionicHistory.currentStateName();
         }
     }
         

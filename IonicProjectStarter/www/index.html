@@ -33,7 +33,6 @@
                 @-ms-viewport { width: 100vw ; min-zoom: 100% ; zoom: 100% ; }          @viewport { width: 100vw ; min-zoom: 100% zoom: 100% ; }
                 @-ms-viewport { user-zoom: fixed ; min-zoom: 100% ; }                   @viewport { user-zoom: fixed ; min-zoom: 100% ; }
                 /*@-ms-viewport { user-zoom: zoom ; min-zoom: 100% ; max-zoom: 200% ; }   @viewport { user-zoom: zoom ; min-zoom: 100% ; max-zoom: 200% ; }*/
-        
         </style>
 
         <link rel="stylesheet" href="css/app.css">
@@ -88,11 +87,15 @@
                         <ion-item class="item widget" ng-click="display.alert('Developing innovative solutions for everyone!', 'Reinsys.com')" data-uib="ionic/list_item">About</ion-item>
                     </ion-list>
                 </ion-content>
+                <ion-footer-bar class="bar-default bar-footer">
+                    <h1 class="title">Powered by Reinsys.</h1>
+                    <button class="button button-icon icon ion-information-circled button-clear button-dark" ng-click="display.alert('Developing innovative solutions for everyone!', 'Reinsys.com')"></button>
 
+                </ion-footer-bar>
             </ion-side-menu>
             <ion-side-menu-content>
                 <ion-nav-bar>
-                    <ion-nav-back-button class="button-clear">
+                    <ion-nav-back-button class="button-clear" ng-show="!display.menuIsOpen()">
                         <i class="ion-arrow-left-c"></i> Back
                     </ion-nav-back-button>
                     <ion-nav-buttons side="left">
@@ -101,7 +104,8 @@
                     </ion-nav-buttons>
                     <ion-nav-buttons side="right">
                         <!-- Toggle left side menu -->
-                        <button class="button button-icon icon widget ion ion-search" data-uib="ionic/button" ng-click="display.goToPath('/search')"></button>
+                        <button style="position: absolute; right: 0px; background-color: #ffffff" class="button button-icon icon widget ion ion-search" data-uib="ionic/button" ng-click="display.goToPath('/search')" ng-show="display.currentStateName() == 'index'"></button>
+                        <button style="position: absolute; right: 0px; background-color: #ffffff" class="button widget button-icon icon ion ion-home" data-uib="ionic/button" ng-click="display.goToPath('/')" ng-show="display.currentStateName() != 'index'"></button>
                     </ion-nav-buttons>
                 </ion-nav-bar>
                 <ion-nav-view name="index"></ion-nav-view>

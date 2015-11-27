@@ -9,6 +9,10 @@ var app = angular.module('myApp',['ionic','ngCordova']);
 app.config(['$controllerProvider', function($controllerProvider) {
 	$controllerProvider.allowGlobals();
 }]);
+app.config(function($ionicConfigProvider) {
+	//$ionicConfigProvider.views.transition('none');
+    //$ionicConfigProvider.navBar.transition('none');
+});
 app.config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
   .state('index', {
