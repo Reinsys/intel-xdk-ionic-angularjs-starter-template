@@ -1,26 +1,34 @@
 {
   "project": {
-    "projectSettingsVersion": "2.0.0",
+    "projectSettingsVersion": "3.0.0",
     "creationData": {
       "type": "App Designer",
       "projectTypeName": "com.intel.xdk.projecttype.jsapp",
       "src": "appDesigner",
       "projectGuid": "093974b2-eba3-4a42-94c0-d840844ca468",
-      "lastModifiedDate": 1443622939641,
+      "lastModifiedDate": 1478875900233,
       "creationDate": 1441118193189
     },
     "XDK-app-designer": "true",
     "sourceDirectory": "www",
     "startFile": "index.html",
-    "projectFiles": {},
+    "projectFiles": {
+      "xdk-publish-meta-data.json": {
+        "settings": {
+          "project": {
+            "XDK-not-deployed": "True"
+          }
+        }
+      }
+    },
     "projectDirectories": {},
     "libraries": [],
     "serviceMethods": [],
     "cordovaPluginsDirectory": "plugins",
     "cordovaPlugins": [
       {
-        "id": "org.apache.cordova.device",
-        "version": "0.2.13",
+        "id": "cordova-plugin-device",
+        "version": "1.1.1",
         "selectedState": "Included",
         "data": {},
         "paramvals": {},
@@ -28,54 +36,32 @@
         "dependedBy": [],
         "originType": "cordova.io",
         "origin": "org.apache.cordova.device",
-        "permissions": {}
+        "permissions": {},
+        "name": "Device",
+        "topLevel": true,
+        "checksum": "927290ca",
+        "gitref": "",
+        "description": "Cordova Device Plugin"
       },
       {
-        "id": "org.apache.cordova.splashscreen",
-        "version": "0.3.5",
+        "id": "cordova-plugin-splashscreen",
+        "version": "2.1.0",
         "selectedState": "Included",
         "data": {},
         "paramvals": {},
         "dependsOn": [],
         "dependedBy": [],
         "originType": "cordova.io",
-        "origin": "org.apache.cordova.splashscreen",
-        "permissions": {}
+        "origin": "cordova-plugin-splashscreen",
+        "permissions": {},
+        "name": "Splashscreen",
+        "topLevel": true,
+        "checksum": "170efb68",
+        "gitref": "",
+        "description": "Cordova Splashscreen Plugin"
       }
     ],
     "buildConfigurations": {
-      "Android-Crosswalk": {
-        "platform_": "android",
-        "runtime_": "Crosswalk with Cordova 3.x",
-        "name_": "Android-Crosswalk",
-        "preferences_": {
-          "android-minSdkVersion": "14",
-          "android-targetSdkVersion": "19",
-          "android-installLocation": "auto"
-        },
-        "isActive_": true,
-        "appName_": "IonicProjectStarter",
-        "appID_": "xdk.intel.blank.ad.template.crosswalk",
-        "appAccess_": {
-          "mode": "legacy",
-          "network": [
-            "*"
-          ],
-          "intents": [],
-          "navigation": []
-        },
-        "icons_": [],
-        "splashes_": [],
-        "addlPermissions_": "",
-        "excludedLibraries_": "",
-        "iosProvs_": [],
-        "cordovaCLIVersion_": "4.1.2",
-        "crosswalkVersion_": "11",
-        "appVersion_": "0.0.1",
-        "appAuthor_": "Intel XDK",
-        "appDescription_": "Template to develop a Cordova mobile web app using the App Designer UI editor.",
-        "appVersionCode_": "1"
-      },
       "Android": {
         "platform_": "android",
         "runtime_": "Cordova 3.x",
@@ -86,6 +72,7 @@
           "android-installLocation": "auto"
         },
         "isActive_": true,
+        "certificateId_": "hE55lNePnU-SvetIkMp1xg2",
         "appName_": "IonicProjectStarter",
         "appID_": "xdk.intel.blank.ad.template",
         "appAccess_": {
@@ -101,8 +88,7 @@
         "addlPermissions_": "",
         "excludedLibraries_": "",
         "iosProvs_": [],
-        "cordovaCLIVersion_": "4.1.2",
-        "crosswalkVersion_": "11",
+        "cordovaCLIVersion_": "5.1.1",
         "appVersion_": "0.0.1",
         "appAuthor_": "Intel XDK",
         "appDescription_": "Template to develop a Cordova mobile web app using the App Designer UI editor.",
@@ -113,26 +99,28 @@
         "runtime_": "Cordova 3.x",
         "name_": "iOS",
         "preferences_": {
-          "ios-target": "6",
-          "ios-configuration": "adhoc"
+          "ios-configuration": "adhoc",
+          "deployment-target": "6"
         },
         "isActive_": true,
+        "certificateId_": "",
         "appName_": "IonicProjectStarter",
         "appID_": "xdk.intel.blank.ad.template",
         "appAccess_": {
-          "mode": "legacy",
+          "mode": "whitelist",
           "network": [
             "*"
           ],
           "intents": [],
-          "navigation": []
+          "navigation": [],
+          "properties": {}
         },
         "icons_": [],
         "splashes_": [],
         "addlPermissions_": "",
         "excludedLibraries_": "",
         "iosProvs_": [],
-        "cordovaCLIVersion_": "4.1.2",
+        "cordovaCLIVersion_": "5.1.1",
         "crosswalkVersion_": "11",
         "appVersion_": "0.0.1",
         "appAuthor_": "Intel XDK",
@@ -147,22 +135,24 @@
           "windows-publisher-id": ""
         },
         "isActive_": true,
+        "certificateId_": "",
         "appName_": "IonicProjectStarter",
         "appID_": "xdk.intel.blank.ad.template",
         "appAccess_": {
-          "mode": "legacy",
+          "mode": "whitelist",
           "network": [
             "*"
           ],
           "intents": [],
-          "navigation": []
+          "navigation": [],
+          "properties": {}
         },
         "icons_": [],
         "splashes_": [],
         "addlPermissions_": "",
         "excludedLibraries_": "",
         "iosProvs_": [],
-        "cordovaCLIVersion_": "4.1.2",
+        "cordovaCLIVersion_": "5.1.1",
         "crosswalkVersion_": "11",
         "appVersion_": "0.0.0.1",
         "appAuthor_": "Intel XDK",
@@ -174,6 +164,7 @@
         "name_": "WebApp",
         "preferences_": {},
         "isActive_": false,
+        "certificateId_": "",
         "appName_": "IonicProjectStarter",
         "appID_": "not.yet.specified",
         "appAccess_": {
@@ -197,6 +188,7 @@
         "name_": "Chrome",
         "preferences_": {},
         "isActive_": false,
+        "certificateId_": "",
         "appName_": "IonicProjectStarter",
         "appID_": "not.yet.specified",
         "appAccess_": {
@@ -220,6 +212,7 @@
         "name_": "Firefox",
         "preferences_": {},
         "isActive_": false,
+        "certificateId_": "",
         "appName_": "IonicProjectStarter",
         "appID_": "not.yet.specified",
         "appAccess_": {
@@ -243,6 +236,7 @@
         "name_": "Facebook",
         "preferences_": {},
         "isActive_": false,
+        "certificateId_": "",
         "appName_": "IonicProjectStarter",
         "appID_": "not.yet.specified",
         "appAccess_": {
@@ -266,6 +260,7 @@
         "name_": "WP81",
         "preferences_": {},
         "isActive_": true,
+        "certificateId_": "",
         "appName_": "IonicProjectStarter",
         "appID_": "not.yet.specified",
         "appAccess_": {
